@@ -14,14 +14,14 @@ pipeline {
      stages {
         stage('Test') {
             input {
-                message "Should we continue?"
+                message "Choose a version"
                 ok "Deploy"
                 parameters {
-                    choice(choices: versionsStr, description: 'version', name: 'version')
+                    choice(name: 'VERSION', choices: versionsStr, description: 'version', name: 'version')
                 }
             }
             steps {
-                sh ''
+                echo "${VERSION}"
             }
         }
      }
