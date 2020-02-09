@@ -1,6 +1,7 @@
 
-pipeline {
-    agent none
+node {
+    checkout scm
+
     stages {
         stage('Example') {
             input {
@@ -22,7 +23,7 @@ pipeline {
             }
         }
         stage('Docker Build') {
-            docker.build("my-spring-boot")
+           docker.build("my-spring-boot")
         }
     }
 }
