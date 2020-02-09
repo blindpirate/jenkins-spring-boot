@@ -21,11 +21,13 @@ pipeline {
             }
         }
         stage('Docker Build') {
+           steps {
                echo 'Starting to build docker image'
 
                 script {
                     def customImage = docker.build("my-spring-boot")
                 }
+           }
         }
      }
 }
