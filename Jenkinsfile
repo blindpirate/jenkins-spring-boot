@@ -2,7 +2,6 @@
 node {
     checkout scm
 
-    stages {
         stage('Example') {
             input {
                 message "Should we continue?"
@@ -25,5 +24,4 @@ node {
         stage('Docker Build') {
            docker.build("my-spring-boot")
         }
-    }
 }
