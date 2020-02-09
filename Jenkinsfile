@@ -1,7 +1,6 @@
 
-node {
-    checkout scm
-
+pipeline {
+     stages {
         stage('Example') {
             input {
                 message "Should we continue?"
@@ -22,6 +21,11 @@ node {
             }
         }
         stage('Docker Build') {
-           docker.build("my-spring-boot")
+               echo 'Starting to build docker image'
+
+                script {
+                    def customImage = docker.build("my-spring-boot")
+                }
         }
+     }
 }
