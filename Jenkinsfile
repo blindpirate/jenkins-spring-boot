@@ -21,7 +21,7 @@ pipeline {
                 }
             }
             steps {
-                sh "ssh zhb@192.168.0.104 '/usr/local/bin/docker rm -f jenkins-test'"
+                sh "ssh zhb@192.168.0.104 '/usr/local/bin/docker rm -f jenkins-test' || true"
                 sh "ssh zhb@192.168.0.104 '/usr/local/bin/docker run --name jenkins-test -p 8081:8080 192.168.0.104:5052/jenkins-test:${version}'"
             }
         }
