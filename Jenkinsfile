@@ -17,7 +17,7 @@ pipeline {
                 message "Choose a version"
                 ok "Deploy"
                 parameters {
-                    choice(name: 'VERSION', choices: versionsStr, description: 'version', name: 'version')
+                    choice(choices: versionsStr, description: 'version', name: 'version')
                 }
             }
             steps {
