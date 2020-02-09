@@ -1,5 +1,6 @@
 
 pipeline {
+     agent none
      stages {
         stage('Example') {
             input {
