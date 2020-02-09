@@ -21,5 +21,8 @@ pipeline {
                 sh 'mvn package'
             }
         }
+        stage('Docker Build') {
+            docker.build("my-spring-boot")
+        }
     }
 }
