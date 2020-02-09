@@ -30,10 +30,8 @@ pipeline {
                echo 'Starting to build docker image'
 
                 script {
-                    docker.withRegistry('http://192.168.0.104:5002') {
-                        def customImage = docker.build("jenkins-test:${new Date().format('yyyy-MM-dd-HH-mm-ss')}")
-                        customImage.push()
-                    }
+                    def customImage = docker.build("jenkins-test:${new Date().format('yyyy-MM-dd-HH-mm-ss')}")
+                    customImage.push()
                 }
            }
         }
